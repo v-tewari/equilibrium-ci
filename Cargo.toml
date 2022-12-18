@@ -1,0 +1,27 @@
+[package]
+name = "equilibrium-ci"
+version = "0.1.0"
+edition = "2021"
+authors = ["Varun Tewari <contact@vtewari.com>"]
+
+
+[dependencies]
+axum = "0.6"
+headers = "0.3"
+tokio = { version = "1.0", features = ["full"] }
+
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+jsonwebtoken = "8.0"
+
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+clap = { version = "4.0", features = ["derive"] }
+
+
+[profile.release]
+opt-level = "s"
+panic = "unwind"
+strip = true
+lto = true
