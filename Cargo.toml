@@ -17,8 +17,13 @@ jsonwebtoken = "8.0"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
-clap = { version = "4.0", features = ["derive"] }
+# database
+sqlx = { version = "0.6", features = ["runtime-tokio-native-tls", "mysql", "macros", "chrono"] }
 
+# utils
+clap = { version = "4.0", features = ["derive"] }
+chrono = "0.4"
+nanoid = "0.4"
 
 [profile.release]
 opt-level = "s"
