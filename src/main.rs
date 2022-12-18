@@ -12,8 +12,8 @@ async fn main() {
         .with(tracing_subscriber::fmt::layer())
         .init();
 
-    let args = cmd::cli().get_matches();
-    let port: u16 = *args.get_one("port").expect("port is a required field");
+    let matches = cmd::cli().get_matches();
+    let port: u16 = *matches.get_one("port").expect("port is a required field");
 
     tracing::debug!("port set to {}", port);
     tracing::debug!("initializing the server");
